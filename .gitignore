@@ -1,0 +1,5 @@
+volume
+node_module
+.npm
+.pulumi
+

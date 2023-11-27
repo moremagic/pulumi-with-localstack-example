@@ -1,0 +1,13 @@
+encryptionsalt: v1:ZKHo3PA3EtA=:v1:IldnIyWw8kVUpYsZ:BUmERlHkR73le2RiV5cqaFsKv08j6Q==
+config:
+  aws:region: us-east-1
+  aws:accessKey: test
+  aws:secretKey: test
+  aws:s3UsePathStyle: 'true'
+  aws:skipCredentialsValidation: 'true'
+  aws:skipRequestingAccountId: 'true'
+  aws:endpoints:
+    - ec2: http://localstack:4566
+      s3: http://localstack:4566
+      s3control: http://localstack:4566
+      s3outposts: http://localstack:4566
