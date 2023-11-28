@@ -18,6 +18,9 @@ services:
       - "./data:/home/localstack/data"
   pulumi:
     image: pulumi/pulumi
+    environment:
+      - LOCALSTACK_HOSTNAME=localstack
+      - PIP_ROOT_USER_ACTION=ignore
     volumes:
       - ./pulumi:/root
     entrypoint: /bin/sh -c "while :; do sleep 10; done"

@@ -9,6 +9,23 @@ http://localhost:4566/test-bucket/sample.txt
 - `pulumi up`
 
 
+# localstack resouce view
 
-# s3 ls
-localstack container: `awslocal s3 ls`
+`awslocal s3 ls`
+`awslocal kms list-keys`
+`awslocal kms describe-key --key-id <KeyId>`
+`awslocal logs describe-log-groups`
+
+## see
+https://docs.localstack.cloud/references/coverage/
+
+# pulumi-local
+
+```
+pip install --upgrade pip
+pip install pulumi-local
+
+mkdir hoge && cd hoge
+pulumilocal new aws-typescript
+pulumilocal up
+```

@@ -7,7 +7,12 @@ config:
   aws:skipCredentialsValidation: 'true'
   aws:skipRequestingAccountId: 'true'
   aws:endpoints:
-    - ec2: http://localstack:4566
+    - ecs: http://localstack:4566
+      ec2: http://localstack:4566
       s3: http://localstack:4566
       s3control: http://localstack:4566
       s3outposts: http://localstack:4566
+      cloudwatch: http://localstack:4566
+      cloudwatchevents: http://localstack:4566
+      cloudwatchlogs: http://localstack:4566
+      kms: http://localstack:4566
