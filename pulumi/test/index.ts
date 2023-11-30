@@ -23,4 +23,32 @@ const exampleKey = new aws.kms.Key("exampleKey", {
 // Create ClowdWatch LogGroup
 const exampleLogGroup = new aws.cloudwatch.LogGroup("exampleLogGroup", {});
 
+const testRole = new aws.iam.Role("testRole", {
+    assumeRolePolicy: JSON.stringify({
+        Version: "2012-10-17",
+        Statement: [{
+            Action: "sts:AssumeRole",
+            Effect: "Allow",
+            Sid: "",
+            Principal: {
+                Service: "ec2.amazonaws.com",
+            },
+        }],
+    }),
+    tags: {
+        "tag-key": "tag-value",
+    },
+});
 
+const policy = new aws.iam.Policy("policy", {
+    path: "/",
+    description: "My test policy",
+    policy: JSON.stringify({
+        Version: "2012-10-17",
+        Statement: [{
+            Action: ["ec2:Describe*"],
+            Effect: "Allow",
+            Resource: "*",
+        }],
+    }),
+});
