@@ -1,5 +1,6 @@
 volume
 node_module
+.bash_history
 .npm
 .pulumi
 .cache

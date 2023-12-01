@@ -1,25 +1,49 @@
-# sample
-http://localhost:4566/test-bucket/sample.txt
+# pulumi-with-localstack
 
-# pulumi sample
+# quick start
 
-- login pulumi container
-- `pulumi login --local`
-- `cd ~/test`
-- `pulumi up`
+`docker compose up`
 
+## pulumi sample run
 
-# localstack resouce view
+login pulumi container
 
-`awslocal s3 ls`
-`awslocal kms list-keys`
-`awslocal kms describe-key --key-id <KeyId>`
-`awslocal logs describe-log-groups`
+```shell
+docker compose exec -ti pulumi bash
+```
 
-## see
+pulumi start
+```shell
+pulumi login --local
+cd ~/test
+pulumi up
+```
+
+## localstack resouce view
+
+login localstack container
+
+```shell
+docker compose exec -ti localstack bash
+```
+
+```shell
+awslocal s3 ls
+awslocal kms list-keys
+awslocal kms describe-key --key-id <KeyId>
+awslocal logs describe-log-groups
+```
+
+### see
 https://docs.localstack.cloud/references/coverage/
 
-# pulumi-local
+# create new pulumi project
+
+login pulumi container
+
+```shell
+docker compose exec -ti pulumi bash
+```
 
 ```
 pip install --upgrade pip
